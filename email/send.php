@@ -15,8 +15,8 @@ class mailer{
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'testmail512002@gmail.com';
-            $mail->Password = 'hzgdixmqrhyrbjxn';
+            $mail->Username = 'impurfx6@gmail.com';
+            $mail->Password = 'dcnb izzj stlk gwab';
             $mail->SMTPSecure = 'ssl';
             $mail->Port = 465;
 
@@ -24,7 +24,7 @@ class mailer{
             $mail->CharSet = 'UTF-8';
             $mail->Encoding = 'base64';
 
-            $mail->setFrom('testmail512002@gmail.com');
+            $mail->setFrom('impurfx6@gmail.com');
             $mail->addAddress($maildat);
 
             $mail->isHTML(true);
