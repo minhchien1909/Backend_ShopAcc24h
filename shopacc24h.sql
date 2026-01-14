@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th8 25, 2025 lúc 01:44 PM
+-- Thời gian đã tạo: Th1 14, 2026 lúc 03:48 AM
 -- Phiên bản máy phục vụ: 10.6.22-MariaDB-0ubuntu0.22.04.1
 -- Phiên bản PHP: 8.2.28
 
@@ -43,7 +43,8 @@ CREATE TABLE `address` (
 
 INSERT INTO `address` (`id`, `user_id`, `name`, `address`, `phone`, `created_at`, `updated_at`) VALUES
 (8, 25, 'home', 'thaun18092003@gmail.com', '0325398386', '2025-08-25 13:05:51', '2025-08-25 13:24:18'),
-(10, 30, 'chien', 'acv@gmail.com', '0859124399', '2025-08-25 13:38:23', '2025-08-25 13:38:23');
+(10, 30, 'chien', 'acv@gmail.com', '0859124399', '2025-08-25 13:38:23', '2025-08-25 13:38:23'),
+(11, 31, 'Chin', 'chienpro1909@gmail.com', '0859124399', '2025-10-04 03:14:03', '2025-10-04 03:14:03');
 
 -- --------------------------------------------------------
 
@@ -56,16 +57,6 @@ CREATE TABLE `blacklisted_tokens` (
   `token` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `blacklisted_tokens`
---
-
-INSERT INTO `blacklisted_tokens` (`id`, `token`, `created_at`) VALUES
-(88, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNSwiZW1haWwiOiJ0aHVhbkBnbWFpbC5jb20iLCJpYXQiOjE3NTYxMjgyMzQsImV4cCI6MTc1NjE0OTgzNH0.FUNWNakOyuQTzZSyFvbHKTtnHTaijdBOLL-yrE2cXdU', '2025-08-25 13:35:53'),
-(89, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOSwiZW1haWwiOiJjaGllbmxhbWxlMUBnbWFpbC5jb20iLCJpYXQiOjE3NTYxMjYyNTUsImV4cCI6MTc1NjE0Nzg1NX0.NyKXF4nwF51skutBbNk8aNkkoQbYL8gDE1AHvt50muY', '2025-08-25 13:36:09'),
-(90, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6InRodWFuMTgwOTIwMDNAZ21haWwuY29tIiwiaWF0IjoxNzU2MTI4OTcxLCJleHAiOjE3NTYxNTA1NzF9.kjeI_9LI_VqDesDz0bisjR50_LAO-GnT48kZ44N15YI', '2025-08-25 13:38:56'),
-(91, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMCwiZW1haWwiOiJobWMzNTIxQGdtYWlsLmNvbSIsImlhdCI6MTc1NjEyOTA2OCwiZXhwIjoxNzU2MTUwNjY4fQ.u_F-8EgQQChneu-yeaEiew4xRruVWBLJurdFJHeTe4c', '2025-08-25 13:41:29');
 
 -- --------------------------------------------------------
 
@@ -134,7 +125,8 @@ CREATE TABLE `discount` (
 INSERT INTO `discount` (`id`, `name`, `code`, `discount_percent`, `start_time`, `quantity`, `status`, `end_time`, `created_at`, `updated_at`) VALUES
 (10, 'Giảm giá 20%', 'UAQOTBXA', 20, '2025-04-30 17:00:00', 984, 1, '2025-05-30 17:00:00', '2025-03-18 06:47:50', '2025-05-14 02:02:49'),
 (12, 'Giảm giá 10%', 'GROCOBWH', 20, '2025-04-30 17:00:00', 994, 1, '2025-05-30 17:00:00', '2025-03-18 08:56:30', '2025-05-18 15:03:44'),
-(13, 'acv', 'YYGZFBFJ', 10, '2025-12-01 17:00:00', 1, 1, '2026-12-01 17:00:00', '2025-08-24 16:58:00', '2025-08-24 16:58:06');
+(13, 'acv', 'YYGZFBFJ', 10, '2025-12-01 17:00:00', 1, 1, '2026-12-01 17:00:00', '2025-08-24 16:58:00', '2025-08-24 16:58:06'),
+(14, 'hadknq', 'OSLOAJSP', -10, '2025-12-02 17:00:00', 1, 1, '2025-12-11 17:00:00', '2025-10-04 03:07:59', '2025-10-09 06:18:37');
 
 -- --------------------------------------------------------
 
@@ -195,7 +187,9 @@ CREATE TABLE `history_orders` (
 
 INSERT INTO `history_orders` (`id`, `user_id`, `name`, `phone`, `address`, `data_product`, `discount_code`, `discount_percent`, `final_total`, `free_of_charge`, `payment_method`, `note`, `status`, `created_at`, `updated_at`, `reason`) VALUES
 (97, 30, 'chien', '0859124399', 'acv@gmail.com', '[{\"product_id\":44,\"quantity\":\"1\"}]', '', 0, 40000, 30000, 'bank', '', 'completed', '2025-08-25 13:40:37', '2025-08-25 13:40:37', NULL),
-(98, 25, 'home', '0325398386', 'thaun18092003@gmail.com', '[{\"product_id\":44,\"quantity\":\"1\"}]', '', 0, 40000, 30000, 'bank', '', 'completed', '2025-08-25 13:40:40', '2025-08-25 13:40:40', NULL);
+(98, 25, 'home', '0325398386', 'thaun18092003@gmail.com', '[{\"product_id\":44,\"quantity\":\"1\"}]', '', 0, 40000, 30000, 'bank', '', 'completed', '2025-08-25 13:40:40', '2025-08-25 13:40:40', NULL),
+(99, 31, 'Chin', '0859124399', 'chienpro1909@gmail.com', '[{\"product_id\":50,\"quantity\":\"1\"}]', '', 0, 47000, 30000, 'bank', '', 'completed', '2025-10-05 10:19:48', '2025-10-05 10:19:48', NULL),
+(100, 31, 'Chin', '0859124399', 'chienpro1909@gmail.com', '[{\"product_id\":44,\"quantity\":\"1\"}]', '', 0, 40000, 30000, 'bank', '', 'completed', '2025-10-09 06:15:57', '2025-10-09 06:15:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -533,8 +527,7 @@ CREATE TABLE `layout_slide_header` (
 
 INSERT INTO `layout_slide_header` (`id`, `image_url`, `title`, `description`) VALUES
 (2, 'https://res.cloudinary.com/dsoj3y7wu/image/upload/v1756057826/amus6foexoiavxtzrjsp.jpg', 'MINH CHẾN', 'chào mừng bạn đến với website của chúng tôi'),
-(3, 'https://res.cloudinary.com/dsoj3y7wu/image/upload/v1756057841/pynympecthczuhs6q5s7.jpg', 'Minh Chiến', 'Chào mừng bạn đến với website của chúng tôi !'),
-(10, 'https://res.cloudinary.com/dsoj3y7wu/image/upload/v1756057939/oh4ixxqammyr4tt1hpe1.jpg', 'MINH CHIẾN', 'Chào mừng bạn đến với website của chúng tôi !');
+(3, 'https://res.cloudinary.com/dsoj3y7wu/image/upload/v1756057841/pynympecthczuhs6q5s7.jpg', 'Minh Chiến', 'Chào mừng bạn đến với website của chúng tôi !');
 
 -- --------------------------------------------------------
 
@@ -758,13 +751,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `quantity_sold`, `quantity`, `star`, `status`, `category`, `hot`, `created_at`, `updated_at`) VALUES
-(44, 'ACC random', '<p>RANDOM 1 acc ngẫu nhiên từ cùi đến vip</p>', 10000, 2, 998, 0, 0, 'strategy', 0, '2025-08-24 06:18:18', '2025-08-25 13:40:40'),
-(45, 'MÃ ff 01', '<p><span>Súng cháy tốc bắn, lãng khách , kim long , quần vàng , nhiều đồ , naruto mới , full tốc bắn , m1014 ct , m1887 tgn</span></p>', 1234567, 0, 1, 0, 0, 'action', 0, '2025-08-24 11:29:40', '2025-08-24 11:29:40'),
-(46, 'Mã ff 02', '<p>- Login gg trắng thông tin </p><p></p><p>Đạo chích đỏ , dung nham , naruto , súng tốc bắn , ump nhong nhong ,mp thần bài</p>', 120000, 0, 1, 0, 0, 'action', 0, '2025-08-24 11:30:54', '2025-08-24 11:30:54'),
-(47, 'Mã ff 03', '<p>- Login gg trắng thông tin</p><p></p><p>VIP 8 , 3C7 2C6. Full naruto mới nhất , súng cháy tốc bắn đày kho , hd bơm máu , mp bích vàng ,lãng khách , dung nham</p>', 10000, 0, 1, 0, 0, 'action', 0, '2025-08-24 11:31:53', '2025-08-24 11:31:53'),
-(48, 'Mã lq 01', '<p>Login: garena trắng</p><p></p><p>Full skin violet, full tướng</p>', 12000, 0, 1, 0, 0, 'strategy', 0, '2025-08-24 11:33:31', '2025-08-24 11:34:47'),
-(49, 'Mã lq 02', '<p>Login: garena trắng</p><p></p><p>Full tướng, nhiều skin bậc ss</p><p></p>', 15000, 0, 1, 0, 0, 'strategy', 0, '2025-08-24 11:34:35', '2025-08-24 11:34:35'),
-(50, 'Mã lq 03', '<p>Login: garena liên kết sdt<br></p><p>Skin bậc 3s hayate</p>', 17000, 0, 1, 0, 0, 'strategy', 0, '2025-08-24 11:36:19', '2025-08-24 11:36:19');
+(44, 'ACC random', '<p>RANDOM 1 acc ngẫu nhiên từ cùi đến vip</p>', 10000, 3, 997, 0, 0, 'strategy', 0, '2025-08-24 06:18:18', '2025-10-09 06:15:57'),
+(45, 'MÃ ff 01', '<h3>🔥 <strong>Free Fire – Sinh tồn đỉnh cao, chiến thắng bằng kỹ năng!</strong></h3><p>Free Fire là game bắn súng sinh tồn góc nhìn thứ ba, nơi 50 người cùng nhảy dù xuống một hòn đảo hoang và chiến đấu để trở thành <strong>người sống sót cuối cùng</strong>.<br><br>🎯 Bạn có thể <strong>tự do chọn vị trí hạ cánh</strong>, <strong>thu thập vũ khí</strong>, <strong>lập chiến lược</strong> cùng đồng đội hoặc solo 1 mình để thể hiện bản lĩnh.<br>💣 Với đồ họa mượt, thời gian mỗi trận chỉ <strong>10 phút</strong>, Free Fire mang đến <strong>trải nghiệm kịch tính, nhanh và nảy lửa</strong>.<br>🕹️ Đặc biệt: hệ thống <strong>nhân vật – kỹ năng – pet – skin súng</strong> đa dạng giúp người chơi thể hiện cá tính riêng.<br>Tài khoản sẵn vật phẩm vip như: naruto, skin súng chuyên dame, nhân vật đầy đủ, skin huyền thoại</p>', 1234567, 0, 1, 0, 0, 'action', 0, '2025-08-24 11:29:40', '2025-10-09 13:48:49'),
+(46, 'Mã ff 02', '<h3>🎯 <strong>Free Fire – Cuộc chiến sinh tồn nghẹt thở!</strong></h3><p>Nhảy dù, loot đồ, chiến đấu!<br>Free Fire đưa bạn vào <strong>trận chiến sinh tồn 50 người</strong>, nơi <strong>chỉ một người sống sót cuối cùng</strong>.<br>Mỗi trận chỉ <strong>10 phút</strong>, nhưng đầy kịch tính – nơi kỹ năng, chiến lược và phản xạ quyết định chiến thắng.<br><br>Chi tiết tài khoản:<br>- Login gg trắng thông tin</p><p><br>Skin trong tài khoản:</p><p>Đạo chích đỏ , dung nham , naruto , súng tốc bắn , ump nhong nhong ,mp thần bài</p>', 120000, 0, 1, 0, 0, 'action', 0, '2025-08-24 11:30:54', '2025-10-09 13:50:50'),
+(47, 'Mã ff 03', '<h3>🔥 <strong>FREE FIRE – CHIẾN TRƯỜNG SINH TỒN KHÔNG DÀNH CHO KẺ YẾU!</strong></h3><p>Bước vào thế giới nơi <strong>mỗi giây đều là sinh tử</strong>.<br>Từ lúc <strong>nhảy dù</strong>, <strong>nhặt súng</strong>, đến <strong>chạm trán đối thủ</strong>, mọi khoảnh khắc đều khiến tim bạn đập nhanh.<br>🎯 50 người – 1 người sống sót. Bạn có đủ bản lĩnh để trở thành <strong>huyền thoại</strong>?<br>💣 Kho vũ khí đa dạng, kỹ năng nhân vật độc quyền, pet siêu ngầu và trang phục cực chất.<br>⚡ Free Fire – nơi <strong>đẳng cấp được chứng minh bằng kỹ năng</strong>, không phải may mắn!<br><br>Chi tiết tài khoản:<br>- Login gg trắng thông tin</p><p></p><p>VIP 8 , 3C7 2C6. Full naruto mới nhất , súng cháy tốc bắn đày kho , hd bơm máu , mp bích vàng ,lãng khách , dung nham<br></p>', 10000, 0, 1, 0, 0, 'action', 0, '2025-08-24 11:31:53', '2025-10-09 13:51:51'),
+(48, 'Mã lq 01', '<h3>⚔️ <strong>LIÊN QUÂN MOBILE – CHIẾN ĐẤU LÀ VINH QUANG!</strong></h3><p>Vào trận 5v5, chọn tướng, phối hợp cùng đồng đội và <strong>lật kèo ngoạn mục</strong>!<br>Mỗi pha combat là <strong>một khoảnh khắc thăng hoa</strong>, nơi chiến thuật và phản xạ hòa làm một.<br>🌟 Hơn 100 tướng – hàng trăm skin – hàng nghìn cách chơi, không trận nào giống trận nào.<br>🔥 Từ tân thủ đến cao thủ, ai cũng có thể <strong>tỏa sáng trên bản đồ Liên Quân</strong>.<br>🎮 Game MOBA quốc dân – <strong>nơi tình bạn, kỹ năng và chiến thắng hội tụ!</strong><br><br>Chi tiết tài khoản:<br>Login: garena trắng</p><p>Full skin violet, full tướng<br><br></p>', 12000, 0, 1, 0, 0, 'strategy', 0, '2025-08-24 11:33:31', '2025-10-09 13:52:35'),
+(49, 'Mã lq 02', '<h3>⚔️ <strong>Liên Quân Mobile – Đấu trường huyền thoại</strong></h3><p>Chiến trường 5v5 huyền thoại, nơi kỹ năng và chiến thuật lên ngôi!<br>Liên Quân Mobile mang đến <strong>trận chiến MOBA tốc độ cao</strong>, mỗi pha combat là <strong>một khoảnh khắc bùng nổ</strong>.<br>💎 Hơn 100 vị tướng với kỹ năng độc đáo – từ sát thủ, pháp sư đến xạ thủ, tanker.<br>🎮 Thời gian trận đấu trung bình 10–15 phút, dễ chơi – nhưng khó thành thạo!<br>🔥 Cập nhật liên tục skin, map, giải đấu, và sự kiện eSports – <strong>tạo nên cộng đồng hàng triệu game thủ Việt</strong>.<br><br>Chi tiết tài khoản:<br>Login: garena trắng</p><p>Full tướng, nhiều skin bậc ss</p><p></p>', 15000, 0, 1, 0, 0, 'strategy', 0, '2025-08-24 11:34:35', '2025-10-09 13:53:16'),
+(50, 'Mã lq 03', '<h3>⚔️ <strong>Liên Quân Mobile – MOBA quốc dân, chiến đấu cùng đồng đội!</strong></h3><p>Liên Quân Mobile là game <strong>MOBA 5v5 thời gian thực</strong>, nơi bạn cùng đồng đội <strong>phối hợp chiến thuật</strong>, <strong>giao tranh đỉnh cao</strong> và <strong>phá nhà chính đối phương</strong> để giành chiến thắng.<br>💥 Hơn <strong>100 tướng</strong> đa dạng: xạ thủ, pháp sư, đấu sĩ, trợ thủ, đỡ đòn... mỗi tướng có kỹ năng riêng biệt.<br>🎮 Trận đấu trung bình chỉ <strong>10–15 phút</strong>, dễ chơi nhưng đòi hỏi <strong>chiến thuật và phản xạ nhanh</strong>.<br>🌟 Game liên tục cập nhật <strong>skin mới, sự kiện, giải đấu eSports tầm quốc tế</strong>, giúp cộng đồng game thủ Việt luôn sôi động.<br><br>Chi tiết tài khoản:<br>Login: garena liên kết sdt</p><p>Skin bậc 3s hayate</p>', 17000, 1, 0, 0, 0, 'strategy', 0, '2025-08-24 11:36:19', '2025-10-09 13:53:47');
 
 -- --------------------------------------------------------
 
@@ -1058,7 +1051,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `fullName`, `email`, `avatar`, `password`, `role_id`, `status`, `created_at`, `updated_at`) VALUES
 (3, 'Nguyễn Minh Thuận', 'thuan18092003@gmail.com', 'https://res.cloudinary.com/dsoj3y7wu/image/upload/v1742001194/mqoodm3nt4m42hhlq49a.jpg', '$2y$10$9AxVFVLEhqcRlXhs/9w88.H4bFr5bJzWF9IrhxPWwcuMXs6zhRp4q', 3, 0, '2025-03-09 16:10:52', '2025-03-15 02:05:00'),
 (25, 'A', 'thuan@gmail.com', 'https://res.cloudinary.com/dsoj3y7wu/image/upload/v1742015676/c8rpqw6wk8edghzxo4xg.jpg', '$2y$10$e6pjfZN9aIxfF9Taount3u1XJKylv52qHLUj0pn3WeFr9Swfa62yW', 2, 0, '2025-05-14 00:51:42', '2025-08-23 13:34:49'),
-(30, 'chien', 'hmc3521@gmail.com', 'https://res.cloudinary.com/dsoj3y7wu/image/upload/v1742015676/c8rpqw6wk8edghzxo4xg.jpg', '$2y$10$cbxt1gHbV5mGxK/bsuP5uezruBb1izm2Lx3aaE8zjUpOBrRSDZw9G', 32, 0, '2025-08-25 13:37:15', '2025-08-25 13:42:05');
+(30, 'chien', 'hmc3521@gmail.com', 'https://res.cloudinary.com/dsoj3y7wu/image/upload/v1742015676/c8rpqw6wk8edghzxo4xg.jpg', '$2y$10$cbxt1gHbV5mGxK/bsuP5uezruBb1izm2Lx3aaE8zjUpOBrRSDZw9G', 32, 0, '2025-08-25 13:37:15', '2025-08-25 13:42:05'),
+(31, 'chien', 'chienpro1909@gmail.com', 'https://res.cloudinary.com/dsoj3y7wu/image/upload/v1742015676/c8rpqw6wk8edghzxo4xg.jpg', '$2y$10$.9za3HH/EIUMu.Wh0f5EKezsHEU8w7J4jIEut/TNfbE4zqSm20N8e', 2, 0, '2025-10-04 03:12:12', '2025-10-04 03:12:12');
 
 -- --------------------------------------------------------
 
@@ -1257,19 +1251,19 @@ ALTER TABLE `verification_codes`
 -- AUTO_INCREMENT cho bảng `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `blacklisted_tokens`
 --
 ALTER TABLE `blacklisted_tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=332;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=335;
 
 --
 -- AUTO_INCREMENT cho bảng `contacts`
@@ -1281,7 +1275,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT cho bảng `discount`
 --
 ALTER TABLE `discount`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `discount_history`
@@ -1299,7 +1293,7 @@ ALTER TABLE `email_history`
 -- AUTO_INCREMENT cho bảng `history_orders`
 --
 ALTER TABLE `history_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT cho bảng `layout_ads`
@@ -1365,7 +1359,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT cho bảng `permission`
@@ -1377,13 +1371,13 @@ ALTER TABLE `permission`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT cho bảng `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 
 --
 -- AUTO_INCREMENT cho bảng `reset_password_codes`
@@ -1401,13 +1395,13 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `verification_codes`
 --
 ALTER TABLE `verification_codes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
