@@ -16,7 +16,7 @@ class mailer{
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
             $mail->Username = 'impurfx6@gmail.com';
-            $mail->Password = 'dcnb izzj stlk gwab';
+            $mail->Password = 'dcnbizzjstlkgwab';
             $mail->SMTPSecure = 'ssl';
             $mail->Port = 465;
 
